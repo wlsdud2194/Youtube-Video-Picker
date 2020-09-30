@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { BsCardList } from 'react-icons/bs';
-import colors from '../libs/palette';
-import Comment from './Comment';
-import Loading from './Loading';
+import React from "react";
+import styled from "styled-components";
+import { BsCardList } from "react-icons/bs";
+import colors from "../libs/palette";
+import Comment from "./Comment";
+import Loading from "./Loading";
 
-type Props ={
+type Props = {
   loading: boolean;
   comments: any[];
   onFetchComments: () => void;
-}
+};
 
 let id = 0;
 
@@ -20,7 +20,7 @@ function CommentList({ loading, comments, onFetchComments }: Props) {
       authorProfileImageUrl,
       likeCount,
       updatedAt,
-      textDisplay
+      textDisplay,
     } = comment.snippet.topLevelComment.snippet;
 
     return (
@@ -36,9 +36,7 @@ function CommentList({ loading, comments, onFetchComments }: Props) {
   });
 
   if (loading) {
-    return (
-      <Loading />
-    )
+    return <Loading />;
   }
 
   return (
@@ -49,13 +47,13 @@ function CommentList({ loading, comments, onFetchComments }: Props) {
             <span className="comment_count">댓글 {comments.length}개</span>
             <span className="comment_desc">(대댓글은 제외)</span>
           </DescBlock>
-          <CommentWrap>
-            {commentList}
-          </CommentWrap>
+          <CommentWrap>{commentList}</CommentWrap>
         </>
       ) : (
         <PendingBlock>
-          <div><BsCardList style={{fontSize: '1.5rem'}} /></div>
+          <div>
+            <BsCardList style={{ fontSize: "1.5rem" }} />
+          </div>
           <div className="pending_title">댓글 보기</div>
           <div className="pending_warn">주의) 모든 댓글을 불러옵니다</div>
           <SmallBtn onClick={onFetchComments}>불러오기</SmallBtn>
@@ -67,7 +65,7 @@ function CommentList({ loading, comments, onFetchComments }: Props) {
 
 const Block = styled.div`
   padding: 1rem 0 0;
-`
+`;
 
 const PendingBlock = styled.div`
   display: flex;
@@ -78,7 +76,7 @@ const PendingBlock = styled.div`
   border: 1px solid ${colors.youtube_black};
   border-radius: 8px;
 
-  & > * + * { 
+  & > * + * {
     margin-top: 0.4rem;
   }
 
@@ -86,7 +84,7 @@ const PendingBlock = styled.div`
     font-size: 1.25rem;
     font-weight: 700;
   }
-`
+`;
 
 const DescBlock = styled.div`
   margin: 0.5rem auto;
@@ -105,14 +103,14 @@ const DescBlock = styled.div`
   .comment_desc {
     color: gray;
   }
-`
+`;
 
 const CommentWrap = styled.div`
   height: 40rem;
   overflow: auto;
   margin: 0 0 2rem;
   padding-right: 0.5rem;
-`
+`;
 
 const SmallBtn = styled.button`
   cursor: pointer;
@@ -130,10 +128,6 @@ const SmallBtn = styled.button`
   &:hover {
     opacity: 0.6;
   }
-`
-
-const SmallInput = styled.input`
-  
-`
+`;
 
 export default CommentList;
