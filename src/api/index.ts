@@ -47,7 +47,6 @@ export const getAllComments = async (videoId: string) => {
     comments.push(...initBody.items);
 
     while (true) {
-      console.log(pageToken);
       if (!pageToken) {
         break;
       }

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { breakpoint, media } from "../libs/media";
 import colors from "../libs/palette";
 
 type Props = {
@@ -45,7 +46,7 @@ const Block = styled.div`
     }
   }
 
-  @media (max-width: 490px) {
+  ${media(490)} {
     .view_title {
       display: flex;
       flex-direction: column;
@@ -64,13 +65,13 @@ const Layout = styled.div`
   width: 1024px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
+  ${breakpoint.lg} {
     width: 700px;
   }
-  @media (max-width: 756px) {
+  ${breakpoint.md} {
     width: 400px;
   }
-  @media (max-width: 456px) {
+  ${breakpoint.sm} {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
