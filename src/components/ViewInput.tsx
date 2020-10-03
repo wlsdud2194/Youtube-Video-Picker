@@ -7,9 +7,7 @@ type Props = {
 };
 
 function ViewInput({ onSearchVideo }: Props) {
-  const [url, setUrl] = useState(
-    "https://www.youtube.com/watch?v=emhf8EF7oyQ&ab_channel=TOONSTUDIO"
-  );
+  const [url, setUrl] = useState("");
 
   const onChangeUrl = useCallback((e) => {
     setUrl(e.target.value);

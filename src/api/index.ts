@@ -5,6 +5,7 @@ const { youtubeApiKey } = env;
 const apiServerUrl = "https://www.googleapis.com/youtube/v3";
 
 export const requestVideoById = async (videoId: string) => {
+  console.log(youtubeApiKey);
   const params: { [key: string]: any } = {
     key: youtubeApiKey,
     part: "snippet,statistics",

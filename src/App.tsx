@@ -14,7 +14,6 @@ function App() {
   const [commentLoading, setCommentLoading] = useState(false);
 
   const onSearchVideo = useCallback((url: string) => {
-    console.log("object", url.length);
     if (url.length > 0) {
       const videoIdData = queryString.parseUrl(url).query.v as string;
 
