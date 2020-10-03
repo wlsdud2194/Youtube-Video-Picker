@@ -1,5 +1,8 @@
 # Youtube-Video-Picker
 
+> youtube comment picker 리뉴얼 버전
+> [바로가기](https://youtube-video-picker.netlify.app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
