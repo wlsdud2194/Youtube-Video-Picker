@@ -23,7 +23,6 @@ function App() {
       requestVideoById(videoIdData)
         .then((data) => {
           if (data.items && data.items.length > 0) {
-            console.log(data.items[0]);
             setVideo(data.items[0]);
           }
         })
